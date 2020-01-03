@@ -31,19 +31,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 /* PACKAGES END */
 
-/*Statuses*/
-let statuses = ['bot.user.setActivity(`${bot.users.size} Republic Slaves!`, Type r! for commands, Test'];
-client.on('ready',() => {
-  setInterval(function() {
-    let status = statuses [Math.floor(Math.random()*statuses.lenght)];
-    //client.user.setPresence({ activity: { name: status }, status 'dnd' });
-    client.user.setPresence({ activity: {name: status 'online' });
-  }, 10000) /*This runs the interval every 10000ms, or 10 seconds.*/
-},
- 
 
 bot.on('ready', () => {
   console.log('Turned on Discord bot');
+  bot.user.setActivity(`${bot.users.size} comrades!`, { type: 'WATCHING' });
   bot.channels.get(bot.channels.get(`${mainChatChannelID}`).id).send(`**Resuming processes!** :wave:`)
 })
 
@@ -611,3 +602,4 @@ bot.on('message', async message => {
 
 
 bot.login(bot_token)
+
