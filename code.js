@@ -36,8 +36,10 @@ let statuses = ['bot.user.setActivity(`${bot.users.size} Republic Slaves!`, Type
 client.on('ready',() => {
   setInterval(function() {
     let status = statuses [Math.floor(Math.random()*statuses.lenght)];
-    client.user.setPreseence({ activity: { name: status }, status 'dnd' });
+    //client.user.setPresence({ activity: { name: status }, status 'dnd' });
+    client.user.setPresence({ activity: {name: status 'online' });
   }, 10000) /*This runs the interval every 10000ms, or 10 seconds.*/
+},
  
 
 bot.on('ready', () => {
